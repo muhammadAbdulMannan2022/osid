@@ -53,7 +53,7 @@ $$\{T_1, S_1, O_1\} \cap \{T_2, S_2, O_2\} = \emptyset \quad \forall \text{ gene
 Install the package into your project:
 
 ```bash
-npm install osid
+npm install @abdulmannan2005/osid
 ```
 
 ---
@@ -65,7 +65,7 @@ npm install osid
 ### ES Modules (ESM)
 
 ```typescript
-import { osid } from "osid";
+import { osid } from "@abdulmannan2005/osid";
 
 // Generate a 32-character Base32 ID
 const id = osid(); 
@@ -79,7 +79,7 @@ console.log(rawId); // 16560940348737222830843187216654286127104n
 ### CommonJS (CJS)
 
 ```javascript
-const { osid } = require("osid");
+const { osid } = require("@abdulmannan2005/osid");
 
 const id = osid();
 console.log(id); // "01H7X1ZA8000003F9A00000000000004"
@@ -129,7 +129,7 @@ Validates if a string is a valid 32-character Crockford Base32 ID (i.e. correct 
 ### `class OsidGenerator`
 Allows creating customized generator instances. Useful for spoofing space coordinates, resetting state, or running unit tests with smaller boundaries.
 ```typescript
-import { OsidGenerator } from "osid";
+import { OsidGenerator } from "@abdulmannan2005/osid";
 
 const generator = new OsidGenerator({
   hostId: 0x112233445566n, // custom 48-bit host footprint
