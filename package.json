@@ -1,0 +1,50 @@
+{
+  "name": "osid",
+  "version": "1.0.0",
+  "description": "Stateless, Deterministic, 160-Bit Collision-Free ID Generator",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "id",
+    "generator",
+    "uuid",
+    "ulid",
+    "snowflake",
+    "collision-free",
+    "deterministic",
+    "crockford",
+    "base32"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muhammadAbdulMannan2022/osid.git"
+  },
+  "bugs": {
+    "url": "https://github.com/muhammadAbdulMannan2022/osid/issues"
+  },
+  "homepage": "https://github.com/muhammadAbdulMannan2022/osid#readme",
+  "author": "Muhammad Abdul Mannan",
+  "license": "MIT",
+  "devDependencies": {
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}
