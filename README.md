@@ -21,20 +21,24 @@
 
 ### The Mathematical Formula
 
-$$I = (T \times 2^{96}) + (S \times 2^{32}) + O$$
+```
+I = (T * 2^96) + (S * 2^32) + O
+```
 
 Or via bitwise operators:
 
-$$I = (T \ll 96\text{n}) \mid (S \ll 32\text{n}) \mid O$$
+```javascript
+I = (T << 96n) | (S << 32n) | O
+```
 
 Where:
-- **$T$ (Chronological Vector)**: A 64-bit integer tracking elapsed microseconds since the custom epoch (January 1, 2026). Lifespan of 584,542 years before overflow.
-- **$S$ (Spatial Vector)**: A 64-bit coordinate segregating execution environments. Formed by a 48-bit Host ID (derived from network MAC addresses or client uuid hash) and a 16-bit Process ID (`process.pid` or tab/random context).
-- **$O$ (Atomic Sequence)**: A 32-bit local counter handling microsecond-level concurrency bursts inside the execution thread.
+- **T (Chronological Vector)**: A 64-bit integer tracking elapsed microseconds since the custom epoch (January 1, 2026). Lifespan of 584,542 years before overflow.
+- **S (Spatial Vector)**: A 64-bit coordinate segregating execution environments. Formed by a 48-bit Host ID (derived from network MAC addresses or client uuid hash) and a 16-bit Process ID (`process.pid` or tab/random context).
+- **O (Atomic Sequence)**: A 32-bit local counter handling microsecond-level concurrency bursts inside the execution thread.
 
-Since no two execution environments can share the same Spatial Vector ($S$) at the exact same point in Time ($T$), and no single environment can execute two events on the same sequence step ($O$), the intersection of these sets is empty:
+Because no two execution environments can share the same Spatial Vector (S) at the exact same point in Time (T), and no single environment can execute two events on the same step of the Sequence (O), collisions are mathematically impossible:
 
-$$\{T_1, S_1, O_1\} \cap \{T_2, S_2, O_2\} = \emptyset \quad \forall \text{ generations}$$
+> **{ T₁, S₁, O₁ } ∩ { T₂, S₂, O₂ } = ∅ for all generations**
 
 ---
 

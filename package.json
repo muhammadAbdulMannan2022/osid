@@ -1,6 +1,6 @@
 {
-  "name": "osid",
-  "version": "1.0.0",
+  "name": "@abdulmannan2005/osid",
+  "version": "1.0.1",
   "description": "Stateless, Deterministic, 160-Bit Collision-Free ID Generator",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
